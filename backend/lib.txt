@@ -7,3 +7,4 @@ pydantic-settings
 pytest
 coverage
 pytest-cov
+cryptography

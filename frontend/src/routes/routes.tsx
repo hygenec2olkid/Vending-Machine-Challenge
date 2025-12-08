@@ -1,9 +1,5 @@
-import Sample from "../features/sample/index.tsx";
-import Contact from "../features/sample2/index.tsx";
+import MainPage from "../features/mainpage/index.tsx";
 
-const routes = [
-  { path: "/", element: <Sample /> },
-  { path: "/contact", element: <Contact /> },
-];
+const routes = [{ path: "/", element: <MainPage /> }];
 
 export default routes;

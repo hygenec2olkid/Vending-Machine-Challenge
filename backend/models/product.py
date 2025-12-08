@@ -4,5 +4,6 @@ class Product(BaseModel):
     id: int 
     name: str 
     price: float 
-    quality: bool 
+    quality: int 
+    img_url: str
     

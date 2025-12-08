@@ -20,4 +20,5 @@ class DBProductInventory(Base):
     name = Column(String(255), nullable=False)
     price = Column(Integer, nullable=False)
     quantity = Column(Integer, nullable=False, default=0)
+    img_url = Column(String(255), nullable=True)
 

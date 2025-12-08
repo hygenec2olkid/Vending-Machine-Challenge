@@ -1,8 +1,9 @@
+import type { AxiosError } from "axios";
 import { useCallback, useState } from "react";
 
 type ApiResponse<T> = { pageable?: unknown } & T;
 
-const useApi = <T = unknown, E = unknown>() => {
+const useApi = <T = unknown, E = AxiosError>() => {
   const [data, setData] = useState<T | undefined>(undefined);
   const [errorMsg, setErrorMsg] = useState<E | undefined>(undefined);
   const [pageable, setPageable] = useState<unknown>(undefined);
@@ -31,7 +32,9 @@ const useApi = <T = unknown, E = unknown>() => {
         return apiResponse;
       } catch (error: unknown) {
         console.error(error);
-        setErrorMsg(error as E);
+        if (error instanceof Error && 'isAxiosError' in error && (error as AxiosError).isAxiosError) {
+          setErrorMsg((error as E));
+        }
 
         if (params?.isThrowError) throw error;
 
