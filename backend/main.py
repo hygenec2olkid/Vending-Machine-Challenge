@@ -9,6 +9,7 @@ app.title = "My FastAPI Application"
 
 origins = [
     "http://localhost:5174",
+    "https://vending-machine-challenge-n1jk.vercel.app"
 ]
 
 # 2. Add the CORSMiddleware to the app
