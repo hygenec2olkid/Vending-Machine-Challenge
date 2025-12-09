@@ -26,5 +26,5 @@ def add_coin_in_stock(
     payload: AddCoinIntoStockRequest,
     service: CoinService = Depends(get_coin_service)):
     
-    service.update_coin_stock(payload.coin, payload.quality)
+    service.update_coin_stock(payload.coin, payload.quantity)
     return service.get_coin_stock()

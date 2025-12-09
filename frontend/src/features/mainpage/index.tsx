@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 import { buyItem, getProductList } from "../../apis/product";
 import useApi from "../../shared/hooks/useApi";
-import type { BuyProductRequest, Product } from "./type/api";
+import type {
+  AddCoinIntoStockRequest,
+  BuyProductRequest,
+  Coin,
+  Product,
+} from "./type/api";
+import { addCoin } from "../../apis/coin";
 
 function MainPage() {
   const { makeRequest, data, loading } = useApi<Product[]>();
@@ -12,6 +18,7 @@ function MainPage() {
     errorMsg,
     onSetData,
   } = useApi<Record<number, number>>();
+  const { makeRequest: addCoinApi } = useApi<Coin[]>();
 
   const [item, setItem] = useState<Product | null>(null);
   const [balance, setBalance] = useState<number>(0);
@@ -61,14 +68,31 @@ function MainPage() {
   }, [errorMsg, onSetData]);
 
   const isDisabled = () =>
-    balance === 0 || (item?.price ?? 0) < 0 || balance < (item?.price ?? 0);
+    balance === 0 || (item?.price ?? 0) <= 0 || balance < (item?.price ?? 0);
+
+  const onAddCoin = () => {
+    const payloads: AddCoinIntoStockRequest[] = coinType.map((coin) => {
+      return {
+        coin: coin,
+        quantity: 10,
+      };
+    });
+
+    payloads.forEach((p) => addCoinApi(() => addCoin(p)));
+  };
 
   return (
     <>
-      <header>Wirapat Shop</header>
+      <header className="text-center py-5 text-2xl">Wirapat Shop</header>
 
       <div className="flex bg-gray-custom">
-        <div className="w-[25%] p-2 ">
+        <div className="w-[25%] p-2">
+          <button
+            className="bg-blue-500 px-3 py-1 text-white rounded-xl mt-1 mb-4 cursor-pointer"
+            onClick={() => onAddCoin()}
+          >
+            Add coin
+          </button>
           <p>Add money:</p>
           {coinType.map((coin) => (
             <button
