@@ -48,6 +48,15 @@ You can easily set up and run the backend of this project using **Docker Compose
     ```bash
     docker compose up --build
     ```
+4.  **Access the Running Application:** The API will be accessible on your host machine.
+
+---
+
+## 📝 API Documentation
+
+Once the Docker containers are running (see the steps above), you can view the complete API documentation (likely Swagger/OpenAPI) at the following address:
+
+🔗 **[http://localhost:8000/docs](http://localhost:8000/docs)**
 
 ---
 
@@ -56,4 +65,3 @@ You can easily set up and run the backend of this project using **Docker Compose
 You can see the result of the backend logic integrated into a frontend application here:
 
 👉 **[https://vending-machine-challenge-n1jk.vercel.app/](https://vending-machine-challenge-n1jk.vercel.app/)**
-
