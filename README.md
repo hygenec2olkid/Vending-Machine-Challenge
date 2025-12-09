@@ -38,7 +38,7 @@ You can easily set up and run the backend of this project using **Docker Compose
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [YOUR_REPO_URL]
+    git clone https://github.com/hygenec2olkid/Vending-Machine-Challenge.git
     ```
 2.  **Navigate to the Backend Directory:**
     ```bash
