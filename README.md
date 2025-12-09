@@ -1,6 +1,6 @@
 ## 🌟 Vending Machine Challenge
 
-A simulation of a simple vending machine that handles product selection, stock management, and currency transactions using **THB (Thai Baht)**.
+A simulation of a simple vending machine that handles product selection, stock management, and currency transactions using.
 
 ---
 
@@ -57,22 +57,3 @@ You can see the result of the backend logic integrated into a frontend applicati
 
 👉 **[https://vending-machine-challenge-n1jk.vercel.app/](https://vending-machine-challenge-n1jk.vercel.app/)**
 
----
-
-## 🚀 Technologies Used
-
-* **Backend:** [e.g., Go, Python, Java]
-* **Containerization:** Docker, Docker Compose
-* **Framework/Libraries:** [e.g., Gin Gonic, Spring Boot]
-
----
-
-## 🗺️ System Design Overview
-
-The system processes transactions through a central controller. The key logic resides in the **Change Calculation Algorithm**, which iterates through available currency denominations (1000, 500, 100, 50, 20, 10, 5, 1 THB) to determine if the exact change can be made using the machine's current cash reserves. If change is possible, the reserves are updated; otherwise, the transaction is rejected, preventing the machine from getting stuck.
-
----
-
-## ✍️ Author
-
-[Your Name] - [Link to your GitHub Profile or LinkedIn]
