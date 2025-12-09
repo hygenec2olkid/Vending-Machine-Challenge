@@ -79,6 +79,7 @@ function MainPage() {
     });
 
     payloads.forEach((p) => addCoinApi(() => addCoin(p)));
+    alert("Added coins into stock");
   };
 
   return (
